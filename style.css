@@ -37,10 +37,16 @@ body {
 
 /* selected player lists */
 .selected-v-height {
-    height: 320px;
+    height: 312px;
     margin-left: -40px;
 }
 
-.list-player-font-size {
-    font-size: 1.1rem;
+/* order list */
+.list-style {
+    margin-top: 2.5rem;
+}
+
+.list-style li {
+    margin-top: 8px;
+    font-size: 1.125rem;
 }
