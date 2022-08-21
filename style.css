@@ -26,3 +26,21 @@ body {
     color: #e0d6d6;
     width: 40vw;
 }
+
+/* column devider */
+.divider-rule {
+    width: 1px;
+    height: 50rem;
+    background-color: #fff;
+    margin-top: -47px;
+}
+
+/* selected player lists */
+.selected-v-height {
+    height: 320px;
+    margin-left: -40px;
+}
+
+.list-player-font-size {
+    font-size: 1.1rem;
+}
