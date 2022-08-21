@@ -16,9 +16,11 @@ function selectPlayers(selectButtons) {
             playerList.innerText = `${playerName}`;
 
             const lengthOfList = selectedPlayersList.childNodes.length;
+            // console.log(lengthOfList)
 
             if (lengthOfList > 5){
                 targetButton.removeAttribute('disabled');
+                alert('You already have selected five players')
                 return;
             }
 

@@ -30,7 +30,7 @@ body {
 /* column devider */
 .divider-rule {
     width: 1px;
-    height: 50rem;
+    height: 55rem;
     background-color: #fff;
     margin-top: -47px;
 }
@@ -49,4 +49,15 @@ body {
 .list-style li {
     margin-top: 8px;
     font-size: 1.125rem;
+}
+
+/* selected player lists */
+.budget-height {
+    height: 470px;
+    margin-left: -40px;
+}
+
+/* budget card */
+.input-field-style {
+    background: #555;
 }
