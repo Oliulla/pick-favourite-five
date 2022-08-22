@@ -1,24 +1,27 @@
-// add slected player in a list
+// add slected player in a order list by select button
 
 const allSelectButtons = document.getElementsByClassName('player-select');
 
 function selectPlayers(selectButtons) {
-    
+
+    // iterate select button
     for (const selectButton of selectButtons) {
 
+        // add event handler on target button
         selectButton.addEventListener('click', function(event) {
 
+            // get target button
             const targetButton = event.target;
             targetButton.setAttribute('disabled', true);
 
-            const playerName = event.target.parentNode.firstChild.nextSibling.innerText;
-
+            // get and set player name in a list
+            const playerName = targetButton.parentNode.firstChild.nextSibling.innerText;
             const selectedPlayersList = document.getElementById('selected-players-list');
             const playerList = document.createElement('li');
             playerList.innerText = `${playerName}`;
 
             const lengthOfList = selectedPlayersList.childNodes.length;
-
+            // enable button if list full
             if (lengthOfList > 5){
                 targetButton.removeAttribute('disabled');
                 alert('You already have selected five players')
@@ -33,6 +36,8 @@ function selectPlayers(selectButtons) {
 }
 selectPlayers(allSelectButtons);
 
+// calculate expenses only for players
+// this function for calculate button
 function getPlayerCostListExpenses(perPlayerFieldId, PlayersListId, expensesId) {
     const perPlayerField = document.getElementById(perPlayerFieldId);
     const perPlayerCost = parseFloat(perPlayerField.value);
@@ -46,10 +51,11 @@ function getPlayerCostListExpenses(perPlayerFieldId, PlayersListId, expensesId) 
         alert('please enter a valid number')
         return;
     }
-
     totalExpensesElement.innerText = playerExpenses;
 }
 
+// calculate total for players, coach and manager
+// this function for calculate total button
 function getPlayerManagerCoachTotal(managerField, coachdField, expensesId, totalId) {
     const managerInputField = document.getElementById(managerField);
     const managerCostAmount = parseFloat(managerInputField.value);
@@ -70,12 +76,13 @@ function getPlayerManagerCoachTotal(managerField, coachdField, expensesId, total
     totalAmount.innerText = totalCost;
 }
 
-// calculate total cost of players
+// add handler on calculate button
 document.getElementById('calculate-button').addEventListener('click', function() {
     getPlayerCostListExpenses('per-player-cost', 'selected-players-list', 'total-expenses');
     
 });
 
+// add handler of calculate total button
 document.getElementById('calculate-total').addEventListener('click', function() {
     getPlayerManagerCoachTotal('manager-cost', 'coach-cost', 'total-expenses','total-cost');
 });

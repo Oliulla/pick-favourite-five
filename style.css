@@ -65,4 +65,5 @@ body {
 /* budget card */
 .input-field-style {
     background: #555;
+    outline: none;
 }
